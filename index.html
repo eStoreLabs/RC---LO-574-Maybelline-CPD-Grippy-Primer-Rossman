@@ -46,7 +46,7 @@
                 <div class="es-hero__content">
                     <h1 class="es-hero__title">Utrwala jak baza, 
                         <br>nawilża jak serum</h1>
-                    <p class="es-hero__subtitle">Perfekcyjny makijaż do 24 godzin*</p>
+                    <p class="es-hero__subtitle">Perfekcyjny <br>makijaż do 24 godzin*</p>
                   </div>
             </div>
 
@@ -89,58 +89,81 @@
                 </div>
             </div>
 
-            <div class="es-slider">
-
+            
+            <!-- SLIDER MOBILE -->
+            <div class="es-slider es-slider--mobile">
                 <div class="es-slider__inner">
-
-                    <!-- Slider main container -->
-                    <div class="swiper es-swiper">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide slider__slide slider__slide--ba">
-                                <div class="ba">
-                                    <div class="ba__item">
-                                        <img src="./images/before.png" alt="Przed" />
-                                        <!-- <span class="ba__label">PRZED</span> -->
-                                    </div>
-                                    <div class="ba__item">
-                                        <img src="./images/after.png" alt="Grippy Serum + Podkład" />
-                                        <!-- <span class="ba__label">GRIPPY SERUM + PODKŁAD</span> -->
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slide 2 -->
-                            <div class="swiper-slide slider__slide slider__slide--textbg">
-                                <div class="slide-text">
-                                <h2 class="slide-text__title">Formuła z 2% niacynamidu</h2>
-                                <p class="slide-text__subtitle">Świeży i pełen blasku wygląd</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- pagination -->
-                        <div class="es-swiper1-pagination swiper-pagination"></div>
-
-                        <!-- navigation buttons -->
-                        <div class="es-swiper1-button-prev swiper-button-prev">
-                            <img src="./images/chevron-left.png"
-                                alt="poprzedni slajd" />
-                        </div>
-                        <div class="es-swiper1-button-next swiper-button-next">
-                            <img src="./images/chevron-left.png"
-                                alt="następny slajd" />
+                <div class="swiper es-swiper-mobile">
+                    <div class="swiper-wrapper">
+                    <!-- Slide 1: Before -->
+                    <div class="swiper-slide slider__slide slider__slide--before">
+                        <img src="./images/before.png" alt="Przed" />
+                    </div>
+                    <!-- Slide 2: After -->
+                    <div class="swiper-slide slider__slide slider__slide--after">
+                        <img src="./images/after.png" alt="Po" />
+                    </div>
+                    <!-- Slide 3: Tekst -->
+                    <div class="swiper-slide slider__slide slider__slide--text-mobile">
+                        <div class="slide-text">
+                            <h2>Formuła z 2% niacynamidu</h2>
+                            <p>Świeży i pełen blasku wygląd</p>
                         </div>
                     </div>
+                    </div>
+                    <div class="swiper-pagination es-swiper-mobile-pagination"></div>
+                    <div class="swiper-button-prev es-swiper-mobile-prev"></div>
+                    <div class="swiper-button-next es-swiper-mobile-next"></div>
                 </div>
-
-
-                
+                </div>
             </div>
-
+            
+            <!-- SLIDER DESKTOP -->
+            <div class="es-slider es-slider--desktop">
+                <div class="es-slider__inner">
+                <div class="swiper es-swiper-desktop">
+                    <div class="swiper-wrapper">
+                    <!-- Slide 1: połączone before+after -->
+                    <div class="swiper-slide slider__slide slider__slide--ba-combined">
+                        <div class="ba">
+                        <div class="ba__item"><img src="./images/before.png" alt="Przed"/></div>
+                        <div class="ba__item"><img src="./images/after.png"  alt="Po"/></div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide slider__slide slider__slide--model">
+                        <div class="model-wrapper" style="overflow-x: hidden;">
+                          <!-- 1. Tekst absolutny -->
+                          <div class="slide-text">
+                            <h2>Formuła z 2% niacynamidu</h2>
+                            <p>Świeży i pełen blasku wygląd</p>
+                          </div>
+                      
+                          <!-- 2. Zdjęcie modelki STATYCZNIE (to wyznaczy wysokość slajdu) -->
+                          <img
+                            class="model-face"
+                            src="./images/grippy-serum-primer-med-model.png"
+                            alt="Modelka"
+                          />
+                      
+                          <!-- 3. Paski absolutne -->
+                          <div class="stripe stripe-up">
+                            <img src="./images/stripe-3.png" alt="Pasek górny" />
+                          </div>
+                          <div class="stripe stripe-down">
+                            <img src="./images/stripe-2.png" alt="Pasek dolny" />
+                          </div>
+                        </div>
+                      </div>
+                    
+                    <div class="swiper-pagination es-swiper-desktop-pagination"></div>
+                    <div class="swiper-button-prev es-swiper-desktop-prev"></div>
+                    <div class="swiper-button-next es-swiper-desktop-next"></div>
+                </div>
+                </div>
+            </div>
+  
+        </div>
             
 
             <div class="es-colors">
@@ -242,20 +265,46 @@
     </script>
   <script>
     // Inicjalizacja Swipera dla każdej instancji slidera
-    const swiper = new Swiper('.es-swiper', {
-        loop: false,
-        autoHeight: false,
+    // const swiper = new Swiper('.es-swiper', {
+    //     loop: false,
+    //     autoHeight: false,
 
-        pagination: {
-            el: '.es-swiper1-pagination',
-            clickable: true,
-        },
+    //     pagination: {
+    //         el: '.es-swiper1-pagination',
+    //         clickable: true,
+    //     },
 
-        navigation: {
-            nextEl: '.es-swiper1-button-next',
-            prevEl: '.es-swiper1-button-prev',
-        },
-    });
+    //     navigation: {
+    //         nextEl: '.es-swiper1-button-next',
+    //         prevEl: '.es-swiper1-button-prev',
+    //     },
+    // });
+
+    const mobileSwiper = new Swiper('.es-swiper-mobile', {
+    loop: false,
+    autoHeight: false,
+    pagination: {
+      el: '.es-swiper-mobile-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.es-swiper-mobile-next',
+      prevEl: '.es-swiper-mobile-prev',
+    },
+  });
+
+  const desktopSwiper = new Swiper('.es-swiper-desktop', {
+    loop: false,
+    autoHeight: true,
+    pagination: {
+      el: '.es-swiper-desktop-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.es-swiper-desktop-next',
+      prevEl: '.es-swiper-desktop-prev',
+    },
+  });
   </script>
 </body>
 </html>
