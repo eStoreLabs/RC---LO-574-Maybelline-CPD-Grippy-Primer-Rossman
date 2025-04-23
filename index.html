@@ -205,7 +205,7 @@
                         <a href=""
                            target="_blank">
                             <div class="es-cross__packshot">
-                                <img src="./images/sslm.png"
+                                <img src="./images/cross-1.png"
                                      alt=""
                                      class="es-cross__img" />
                             </div>
@@ -224,7 +224,7 @@
                         <a href="#"
                            target="_blank">
                             <div class="es-cross__packshot">
-                                <img src="./images/instant-eraser.png"
+                                <img src="./images/cross-2.png"
                                      alt=""
                                      class="es-cross__img" />
                             </div>
@@ -242,7 +242,7 @@
                         <a href="#"
                            target="_blank">
                             <div class="es-cross__packshot">
-                                <img src="./images/ls-sh.png"
+                                <img src="./images/cross-3.png"
                                      alt=""
                                      class="es-cross__img" />
                             </div>
@@ -294,8 +294,12 @@
     // });
 
     const mobileSwiper = new Swiper('.es-swiper-mobile', {
-    loop: false,
+    loop: true,
     autoHeight: false,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: true,
+    },
     pagination: {
       el: '.es-swiper-mobile-pagination',
       clickable: true,
@@ -307,8 +311,12 @@
   });
 
   const desktopSwiper = new Swiper('.es-swiper-desktop', {
-    loop: false,
+    loop: true,
     autoHeight: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: true,
+    },
     pagination: {
       el: '.es-swiper-desktop-pagination',
       clickable: true,

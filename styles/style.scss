@@ -740,15 +740,6 @@ $secondary: #DE73A3;
         align-items: center;
         flex-flow: column;
         color: $black;
-
-        &:nth-of-type(2) {
-            .es-cross__packshot {
-              .es-cross__img {
-                width: 80%;
-                height: auto;
-              }
-            }
-          }
     }
     .es-cross__single a {
         display: flex;
@@ -768,6 +759,9 @@ $secondary: #DE73A3;
     .es-cross__img {
         max-height: 100%;
         transition: all 0.3s;
+        margin: 0 auto;
+        display: inline;
+        max-width: none;
     }
     .es-cross__name {
         line-height: inherit;

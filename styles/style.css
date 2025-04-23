@@ -581,10 +581,6 @@
   flex-flow: column;
   color: #000000;
 }
-#es-rc #es-rc-content .es-cross__single:nth-of-type(2) .es-cross__packshot .es-cross__img {
-  width: 80%;
-  height: auto;
-}
 #es-rc #es-rc-content .es-cross__single a {
   display: flex;
   justify-content: center;
@@ -603,6 +599,9 @@
 #es-rc #es-rc-content .es-cross__img {
   max-height: 100%;
   transition: all 0.3s;
+  margin: 0 auto;
+  display: inline;
+  max-width: none;
 }
 #es-rc #es-rc-content .es-cross__name {
   line-height: inherit;
