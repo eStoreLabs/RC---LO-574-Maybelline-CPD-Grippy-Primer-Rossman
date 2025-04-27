@@ -6,6 +6,21 @@ $white: #ffffff;
 $black: #000000;
 $primary: #D15071;
 $secondary: #DE73A3;
+$green: #246664;
+
+@mixin text {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+@mixin img {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+  }
 
 #es-rc #es-rc-content {
     font-family: $font-regular;
@@ -619,92 +634,116 @@ $secondary: #DE73A3;
         }
     }
 
-    .es-colors {
-        background-image: url("../images/section-5.png"); 
-        background-size: cover;
-        background-repeat: no-repeat;
-        padding: 16px;
-        z-index: 0;
+    .es-results {
         position: relative;
-
-        &__title{
-            color: $white;
-            position: relative;
-            z-index: 1;
-            padding: 1rem 1rem 3rem;
-            text-align: center;
+        padding: 30px 20px;
+        padding-top: 20px;
+        text-transform: uppercase;
+        color: $green;
+        text-align: center;
+        background: #F296C2;
+        background: linear-gradient(180deg, rgba(242, 150, 194, 1) 0%, rgba(255, 255, 255, 0.9) 51%, rgba(200, 230, 232, 1) 81%);
+  
+        .es-results__img {
+          @include img;
         }
-
-        .es-title {
-            font-size: clamp(2.375rem, 2.1475rem + 1.2552vw, 2.75rem);
-            color: #fff;
+  
+        .es-results__bg {
+          display: none;
         }
-
-        &__container {
-            background-repeat: no-repeat;
+        .es-results__img--mobile {
+          padding: 25px 0;
+        }
+  
+        &__title {
+          padding: 20px 0;
+          font-size: 40px;
+          font-weight: 700;
+          line-height: 1;
+          color: $white;
+        }
+  
+        &__text-big {
+          @include text;
+          font-size: 30px;
+          font-weight: 700;
+          line-height: 1;
+        }
+  
+        &__text-small {
+          @include text;
+          font-size: 20px;
+          text-transform: none;
+        }
+  
+        &__text--pink {
+          color: $primary;
+        }
+  
+    }
+    @media screen and (min-width: 768px) {
+        .es-results {
+            background-image: url("../images/section-5.png"); 
             background-size: cover;
-            background-image: url("../images/grippy-serum-poreles-jelly-primer.png"); 
-
-            background-position: right center;
-            height: 55vw;
+            background-repeat: no-repeat;
+            padding: 16px;
+            z-index: 0;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-
-        }
-    }
-
-    @media (min-width: 768px) {
-        .es-colors {
-            &__title{
-                position: absolute;
-                max-width: 40%;
-                padding: 2rem;
-                top: 40%;
+    
+            .es-results__img--mobile {
+              display: none
             }
-
-            .es-title {
-                font-size: 38px;
-                color: #fff;
+    
+            .es-results__bg {
+              display: block
             }
-
-            &__container {
-                background-position: right center;
-                max-height: 400px;
-                justify-content: flex-start; 
+    
+            &__title {
+              padding: unset;
+              font-size: 45px;
+              position: absolute;
+              bottom: 35%;
+              left: 10%;
             }
-        }
-    }
-
-    @media (min-width: 900px) {
-        .es-colors {
-            .es-title {
-                font-size: 50px;
+    
+            &__text-big {
+              font-size: 35px;
             }
-
-            &__container {
-                max-height: 500px;
+    
+            &__text-small {
+              font-size: 25px;
+            }
+    
+            &__text--pink {
+              color: $primary;
+              position: absolute;
+              top: 10%;
+              left: 30%
+            }
+    
+            &__text--green {
+              position: absolute;
+              top: 10%;
+              right: 4%;
             }
         }
     }
 
-    @media (min-width: 1024px) {
-        .es-colors {
-            &__title{
-
-                top: 35%;
+    @media screen and (min-width: 925px) {
+        .es-results {
+            &__title {
+              font-size: 50px;
             }
-
-            .es-title {
-                font-size: 64px;
+    
+            &__text-big {
+              font-size: 40px;
             }
-
-            &__container {
-                max-height: 572px;
+    
+            &__text-small {
+              font-size: 25px;
             }
-        }
+    
+          }
     }
 
     .es-cross {
