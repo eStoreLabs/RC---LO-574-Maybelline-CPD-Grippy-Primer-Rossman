@@ -516,16 +516,43 @@ $green: #246664;
       
     .slider__slide--before,
     .slider__slide--after {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 16px;
+        padding: 0;
+        position: relative;
+        font-size: clamp(1.25rem, 0.1883rem + 5.8577vw, 3rem);
+        font-weight: 600;
 
         img { 
             width: 100%;
             border-radius: 30px;
             border: 5px solid $primary;
         }
+
+        .slider__slide--text-1 {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            line-height: inherit;
+            text-transform: uppercase;
+            color: $white;
+            z-index: 1;  
+        }
+
+        .slider__slide--text-2 {
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            line-height: inherit;
+            text-transform: uppercase;
+            color: $white;
+            z-index: 1; 
+        }
+
     }
       
     .slider__slide--text-mobile {
@@ -558,7 +585,10 @@ $green: #246664;
     .slider__slide--ba-combined {
         .ba {
             display: flex;    
+            position: relative; 
             padding: 16px;
+            font-size: clamp(1.5625rem, 0.7271rem + 1.7405vw, 2.25rem);
+            font-weight: 600;
 
             .ba__item {
 
@@ -589,6 +619,30 @@ $green: #246664;
 
                 & + & { 
                     margin-left: 8px;
+                }
+
+                &--text-1 {
+                    position: absolute;
+                    bottom: 7%;
+                    left: 5%;
+                    margin: 0;
+                    padding: 0;
+                    font-family: inherit;
+                    text-transform: uppercase;
+                    color: $white;
+                    z-index: 1; 
+                }
+
+                &--text-2 {
+                    position: absolute;
+                    bottom: 7%;
+                    right: 7%;
+                    margin: 0;
+                    padding: 0;
+                    font-family: inherit;
+                    text-transform: uppercase;
+                    color: $white;
+                    z-index: 1; 
                 }
             }
         }
